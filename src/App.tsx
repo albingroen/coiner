@@ -58,7 +58,7 @@ const App: Component = () => {
               <div class="bg-gray-800 z-20 absolute rounded-tl-2xl rounded-tr-2xl h-full w-full p-6 overflow-auto pb-32">
                 <Coin
                   coinId={coinId()!}
-                  initialCoin={coins()?.coins.find((c) => c.uuid === coinId())}
+                  coin={coins()?.coins.find((c) => c.uuid === coinId())}
                   onClose={() => {
                     setCoinId(undefined);
                   }}
