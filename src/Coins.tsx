@@ -1,4 +1,4 @@
-import { Accessor, Component, For, Resource, Show } from "solid-js";
+import { Accessor, Component, For, onMount, Resource, Show } from "solid-js";
 import { search as searchIcon } from "solid-heroicons/outline";
 import { Icon } from "solid-heroicons";
 
@@ -17,6 +17,21 @@ const Coins: Component<CoinsProps> = ({
   search,
   coins,
 }) => {
+  onMount(() => {
+    const searchElement = document.getElementById("search");
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "f" && e.metaKey) {
+        e.preventDefault();
+        searchElement?.focus();
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        searchElement?.blur();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+  });
+
   return (
     <div class="flex flex-col h-screen">
       <div className="flex justify-between items-end mt-3">
@@ -25,6 +40,7 @@ const Coins: Component<CoinsProps> = ({
 
       <div className="relative mt-3">
         <input
+          id="search"
           className="shadow shadow-stone-300/20 dark:shadow-black/20 mt-1 bg-transparent placeholder-stone-300 dark:placeholder-stone-600 w-full border-stone-300 dark:border-stone-700 rounded-md py-1.5 px-2 text-sm focus:outline-none focus:ring-0 focus:border-stone-400 dark:focus:border-stone-500 transition"
           oninput={(e) => {
             onChangeSearch(e.currentTarget.value);
