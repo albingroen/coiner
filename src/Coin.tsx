@@ -26,6 +26,8 @@ const Coin: Component<CoinProps> = ({ coinId, onClose, initialCoin }) => {
   onMount(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
+        e.preventDefault();
+        e.stopPropagation();
         onClose();
       }
     };
