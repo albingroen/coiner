@@ -20,7 +20,7 @@ const Coins: Component<CoinsProps> = ({
   return (
     <div class="flex flex-col h-screen">
       <div className="flex justify-between items-end mt-3">
-        <h1 className="text-3xl font-semibold leading-none">All coins</h1>
+        <h1 className="text-2xl font-semibold leading-none">All Coins</h1>
       </div>
 
       <div className="relative mt-3">
@@ -72,9 +72,11 @@ const Coins: Component<CoinsProps> = ({
                   />
                 </div>
                 <div class="p-3 bg-white dark:bg-gray-800 group-hover:bg-blue-500 dark:group-hover:bg-blue-700 flex-1 flex flex-col justify-center">
-                  <h4 class="group-hover:text-white">{coin.name}</h4>
+                  <h4 class="font-medium group-hover:text-white">
+                    {coin.name}
+                  </h4>
                   <Show when={coin.price}>
-                    <p class="text-sm leading-none text-gray-400 dark:text-gray-500 mt-1 group-hover:text-white/70">
+                    <p class="text-sm font-medium leading-none text-gray-400 dark:text-gray-400 mt-1 group-hover:text-white/70">
                       ${coin.price}
                     </p>
                   </Show>

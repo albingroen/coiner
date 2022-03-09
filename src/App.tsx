@@ -16,7 +16,7 @@ const App: Component = () => {
   const [coinId, setCoinId] = createSignal<string>();
 
   return (
-    <main className="dark">
+    <main className="dark antialiased">
       <div class="bg-gradient-to-b dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 dark:text-white p-6 min-h-screen">
         <Transition
           onEnter={(el, done) => {
@@ -55,7 +55,7 @@ const App: Component = () => {
                 }}
               />
 
-              <div class="bg-gray-800 z-20 absolute rounded-tl-2xl rounded-tr-2xl h-full w-full p-6 overflow-auto pb-32 border-t border-gray-700 shadow-2xl shadow-white">
+              <div class="bg-gray-800 z-20 absolute rounded-tl-2xl rounded-tr-2xl h-full w-full p-6 overflow-auto pb-32">
                 <Coin
                   coinId={coinId()!}
                   initialCoin={coins()?.coins.find((c) => c.uuid === coinId())}

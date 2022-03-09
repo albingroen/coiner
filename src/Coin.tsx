@@ -54,19 +54,23 @@ const Coin: Component<CoinProps> = ({ coinId, onClose, initialCoin }) => {
             </div>
 
             <div className="mt-4 space-y-3">
-              <div className="p-3 bg-gray-700 rounded-lg border border-gray-600/20">
-                <p className="text-gray-400">Current price</p>
-                <h3 class="text-xl mt-1">
+              <div className="p-3 bg-gray-700/40 rounded-lg ">
+                <p className="text-gray-400 font-medium text-xs tracking-wide uppercase">
+                  Current price
+                </p>
+                <h3 class="text-xl mt-1 font-medium">
                   {typeof initialCoin.price === "string"
                     ? `$${Number(initialCoin.price).toLocaleString()}`
                     : "No data"}
                 </h3>
               </div>
 
-              <div className="p-3 bg-gray-700 rounded-lg border border-gray-600/20">
-                <p className="text-gray-400">Change (30 days)</p>
+              <div className="p-3 bg-gray-700/40 rounded-lg ">
+                <p className="text-gray-400 font-medium text-xs tracking-wide uppercase">
+                  Change (30 days)
+                </p>
                 <h3
-                  class={`text-xl mt-1 ${
+                  class={`text-xl mt-1 font-medium ${
                     typeof initialCoin.change === "string"
                       ? Number(initialCoin.change) > 0
                         ? "text-green-300"
@@ -80,9 +84,11 @@ const Coin: Component<CoinProps> = ({ coinId, onClose, initialCoin }) => {
                 </h3>
               </div>
 
-              <div className="p-3 bg-gray-700 rounded-lg border border-gray-600/20">
-                <p className="text-gray-400">Market cap</p>
-                <h3 class="text-xl mt-1">
+              <div className="p-3 bg-gray-700/40 rounded-lg ">
+                <p className="text-gray-400 font-medium text-xs tracking-wide uppercase">
+                  Market cap
+                </p>
+                <h3 class="text-xl mt-1 font-medium">
                   {typeof initialCoin.marketCap === "string"
                     ? Number(initialCoin.marketCap).toLocaleString()
                     : "No data"}
