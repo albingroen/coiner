@@ -17,7 +17,7 @@ const App: Component = () => {
 
   return (
     <main className="dark antialiased">
-      <div class="bg-gradient-to-b dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 dark:text-white p-6 min-h-screen">
+      <div class="bg-gradient-to-b dark:from-stone-900 dark:via-stone-900 dark:to-stone-800 dark:text-white p-6 h-screen overflow-hidden">
         <Transition
           onEnter={(el, done) => {
             const a = el.animate(
@@ -49,13 +49,13 @@ const App: Component = () => {
           <Show when={coinId()}>
             <div class="fixed inset-0 z-20 pt-20">
               <div
-                className="inset-0 z-10 absolute bg-black bg-opacity-80"
+                className="inset-0 z-10 absolute"
                 onClick={() => {
                   setCoinId(undefined);
                 }}
               />
 
-              <div class="bg-gray-800 z-20 absolute rounded-tl-2xl rounded-tr-2xl h-full w-full p-6 overflow-auto pb-32">
+              <div class="bg-stone-800 z-20 absolute rounded-tl-2xl rounded-tr-2xl h-full w-full p-6 overflow-auto pb-32">
                 <Coin
                   coinId={coinId()!}
                   coin={coins()?.coins.find((c) => c.uuid === coinId())}

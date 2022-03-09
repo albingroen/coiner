@@ -33,11 +33,11 @@ const Coin: Component<CoinProps> = ({ onClose, coin }) => {
         <div className="flex items-start justify-between">
           <h2 class="text-2xl font-medium flex flex-wrap gap-1.5">
             <span>{coin.name}</span>
-            <span className="text-gray-500">({coin.symbol})</span>
+            <span className="text-stone-500">({coin.symbol})</span>
           </h2>
 
           <button
-            class="text-gray-500 hover:text-gray-300 transition items-center"
+            class="text-stone-500 hover:text-stone-300 transition items-center"
             onClick={onClose}
           >
             <Icon class="w-6" path={x} />
@@ -45,8 +45,8 @@ const Coin: Component<CoinProps> = ({ onClose, coin }) => {
         </div>
 
         <div className="mt-4 space-y-3">
-          <div className="p-3 bg-gray-700/40 rounded-lg ">
-            <p className="text-gray-400 font-medium text-xs tracking-wide uppercase">
+          <div className="p-3 bg-stone-700/40 rounded-lg ">
+            <p className="text-stone-400 font-medium text-xs tracking-wide uppercase">
               Current price
             </p>
             <h3 class="text-xl mt-1 font-medium">
@@ -56,8 +56,8 @@ const Coin: Component<CoinProps> = ({ onClose, coin }) => {
             </h3>
           </div>
 
-          <div className="p-3 bg-gray-700/40 rounded-lg ">
-            <p className="text-gray-400 font-medium text-xs tracking-wide uppercase">
+          <div className="p-3 bg-stone-700/40 rounded-lg ">
+            <p className="text-stone-400 font-medium text-xs tracking-wide uppercase">
               Change (30 days)
             </p>
             <h3
@@ -73,8 +73,8 @@ const Coin: Component<CoinProps> = ({ onClose, coin }) => {
             </h3>
           </div>
 
-          <div className="p-3 bg-gray-700/40 rounded-lg ">
-            <p className="text-gray-400 font-medium text-xs tracking-wide uppercase">
+          <div className="p-3 bg-stone-700/40 rounded-lg ">
+            <p className="text-stone-400 font-medium text-xs tracking-wide uppercase">
               Market cap
             </p>
             <h3 class="text-xl mt-1 font-medium">

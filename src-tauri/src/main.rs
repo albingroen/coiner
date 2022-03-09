@@ -3,8 +3,32 @@
   windows_subsystem = "windows"
 )]
 
+use tauri::{Menu, MenuItem, Submenu};
+
 fn main() {
-  tauri::Builder::default()
-    .run(tauri::generate_context!())
-    .expect("error while running tauri application");
+    let main_menu = Submenu::new(
+        "About",
+        Menu::new()
+            .add_native_item(MenuItem::Hide)
+            .add_native_item(MenuItem::Quit)
+    );
+
+    let edit_menu = Submenu::new(
+        "Edit",
+        Menu::new()
+            .add_native_item(MenuItem::Copy)
+            .add_native_item(MenuItem::Paste)
+            .add_native_item(MenuItem::SelectAll)
+            .add_native_item(MenuItem::Undo)
+            .add_native_item(MenuItem::Redo)
+    );
+
+    let menu = Menu::new()
+        .add_submenu(main_menu)
+        .add_submenu(edit_menu);
+
+    tauri::Builder::default()
+        .menu(menu)
+        .run(tauri::generate_context!())
+        .expect("error while running tauri application");
 }
