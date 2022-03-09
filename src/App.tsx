@@ -22,11 +22,11 @@ const App: Component = () => {
           onEnter={(el, done) => {
             const a = el.animate(
               [
-                { transform: "translateY(1000px)" },
+                { transform: "translateY(500px)" },
                 { transform: "translateY(0px)" },
               ],
               {
-                duration: 400,
+                duration: 300,
                 easing: "ease-in-out",
               }
             );
