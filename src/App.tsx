@@ -17,7 +17,7 @@ const App: Component = () => {
   const [coinId, setCoinId] = createSignal<string>();
 
   return (
-    <main className="dark antialiased">
+    <main className="dark antialiased fade-in">
       <div class="bg-gradient-to-b dark:from-stone-900 dark:via-stone-900 dark:to-stone-800 dark:text-white p-6 h-screen overflow-hidden">
         <Transition
           onEnter={(el, done) => {

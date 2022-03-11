@@ -9,3 +9,18 @@
     @apply select-none cursor-default bg-gray-900;
   }
 }
+
+@layer components {
+  .fade-in {
+    animation: fadeIn 1s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

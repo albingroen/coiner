@@ -55,7 +55,7 @@ const Coins: Component<CoinsProps> = ({
           </div>
         }
       >
-        <ul className="space-y-3 flex-1 overflow-y-auto relative pb-12 mt-2">
+        <ul className="fade-in space-y-3 flex-1 overflow-y-auto relative pb-12 mt-2">
           <div className="fixed pointer-events-none inset-0 bg-gradient-to-b from-transparent via-transparent to-stone-900/50" />
 
           <For each={coins()?.coins}>
