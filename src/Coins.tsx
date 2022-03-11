@@ -1,6 +1,7 @@
 import { Accessor, Component, For, Resource, Show } from "solid-js";
 import { search as searchIcon } from "solid-heroicons/outline";
 import { Icon } from "solid-heroicons";
+import Spinner from "./Spinner";
 
 type CoinsProps = {
   onChangeSearch: (value: string) => void;
@@ -46,8 +47,15 @@ const Coins: Component<CoinsProps> = ({
         />
       </div>
 
-      <Show when={coins}>
-        <ul className="mt-4 space-y-3 flex-1 overflow-y-auto relative pb-12">
+      <Show
+        when={coins()}
+        fallback={
+          <div class="flex justify-center mt-5">
+            <Spinner />
+          </div>
+        }
+      >
+        <ul className="space-y-3 flex-1 overflow-y-auto relative pb-12 mt-2">
           <div className="fixed pointer-events-none inset-0 bg-gradient-to-b from-transparent via-transparent to-stone-900/50" />
 
           <For each={coins()?.coins}>

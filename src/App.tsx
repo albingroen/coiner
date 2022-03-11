@@ -3,6 +3,7 @@ import Coins from "./Coins";
 import { API_URL } from "./config";
 import { Component, createResource, createSignal, Show } from "solid-js";
 import { Transition } from "solid-transition-group";
+import Spinner from "./Spinner";
 
 async function getCoins(...params: any) {
   const search = params[1]?.refetching?.search ?? "";
