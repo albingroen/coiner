@@ -1,6 +1,6 @@
 {
   "name": "coiner",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Coiner is a small Mac app you can use to keep track of all available crypto currencies",
   "scripts": {
     "start": "vite",
